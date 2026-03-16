@@ -44,12 +44,26 @@ NEGATIVE_WORDS = [
 
 # Short example posts written as if they were social media updates or messages.
 SAMPLE_POSTS = [
-    "I love this class so much",
-    "Today was a terrible day",
-    "Feeling tired but kind of hopeful",
-    "This is fine",
-    "So excited for the weekend",
-    "I am not happy about this",
+    "I love this class so much", # positive
+    "Today was a terrible day", # negative
+    "Feeling tired but kind of hopeful", # mixed
+    "This is fine", # neutral
+    "So excited for the weekend", # positive
+    "I am not happy about this", # negative
+    #personally added 10 new posts
+    "thats so funny lol", #positive
+    "It's actually a good thing I ran into traffic because I got to listen to more of my podcast", #postive
+    "hah yea, i bet he has a greeeeaaat personality", #sarcastic negative
+    "bruh 💀", #negative
+    "i'm ok with it", #neutral
+    "don't worry about it lol", #neutral
+    "right now im not sure but I'll let you know later", #neutral
+    "hmmmm 🙂", #mixed
+    "hey i'd be happy to drive over to see you but i have to work late tonight", #mixed
+    "i'm not sure how my future will look like but I hope I'll figure it out later" #mixed
+
+
+
 ]
 
 # Human labels for each post above.
@@ -65,9 +79,20 @@ TRUE_LABELS = [
     "neutral",   # "This is fine"
     "positive",  # "So excited for the weekend"
     "negative",  # "I am not happy about this"
+    "positive",  # "thats so funny lol"
+    "positive",  # "It's actually a good thing I ran into traffic because I got to listen to more of my podcast"
+    "negative",  # "hah yea, i bet he has a greeeeaaat personality"
+    "neutral",   # "i'm ok with it"
+    "neutral",   # "right now im not sure but I'll let you know later"
+    "mixed",     # "hey i'd be happy to drive over to see you but i have to work late tonight"
+    "mixed",     # "i'm not sure how my future will look like but I hope I'll figure it out later"
+    "negative",  # "bruh 💀"
+    "mixed",     # "hmmmm 🙂"
+    "neutral",   # "don't worry about it lol"
+
 ]
 
-# TODO: Add 5-10 more posts and labels.
+# TODO: Add 5-10 more posts and labels. - done
 #
 # Requirements:
 #   - For every new post you add to SAMPLE_POSTS, you must add one
@@ -91,4 +116,4 @@ TRUE_LABELS = [
 # TRUE_LABELS.append("mixed")
 #
 # Remember to keep them aligned:
-#   len(SAMPLE_POSTS) == len(TRUE_LABELS)
+#print(len(SAMPLE_POSTS) == len(TRUE_LABELS))
