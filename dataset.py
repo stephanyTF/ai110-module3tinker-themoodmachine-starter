@@ -24,9 +24,11 @@ POSITIVE_WORDS = [
     "relaxed",
     "amazing",
     "hope",
+    "hopeful",
     "laugh",
     "joy",
-    "smile"
+    "smile",
+    "funny"
 ]
 
 NEGATIVE_WORDS = [
@@ -43,6 +45,9 @@ NEGATIVE_WORDS = [
     "worry",
     "dead"
 ]
+
+sarcasm_markers = {"i bet", "yeah right", "sure sure", "oh great", "wow thanks"}
+
 
 # ---------------------------------------------------------------------
 # Starter labeled dataset

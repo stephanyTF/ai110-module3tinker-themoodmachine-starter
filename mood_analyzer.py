@@ -11,7 +11,7 @@ This class starts with very simple logic:
 
 from typing import List, Dict, Tuple, Optional
 
-from dataset import POSITIVE_WORDS, NEGATIVE_WORDS
+from dataset import POSITIVE_WORDS, NEGATIVE_WORDS, sarcasm_markers
 
 
 class MoodAnalyzer:
@@ -111,7 +111,7 @@ class MoodAnalyzer:
         #Handle simple negation such as "not happy" or "not bad"
         tokens = self.preprocess(text)
         score = 0
-        negation_words = {"not", "never", "no"}
+        negation_words = {"not", "never", "no", "don't"}
         negation_window = 0
         for token in tokens:
             if token in negation_words:
@@ -158,6 +158,9 @@ class MoodAnalyzer:
         tokens = self.preprocess(text)
         has_positive = any(t in self.positive_words for t in tokens)
         has_negative = any(t in self.negative_words for t in tokens)
+        has_sarcasm = any(marker in text.lower() for marker in sarcasm_markers)
+        if has_sarcasm:
+            return "negative"
         if has_positive and has_negative:
             return "mixed"
         return "neutral"
