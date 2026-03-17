@@ -48,12 +48,37 @@ class MoodAnalyzer:
           - Splits on spaces
 
         Ideas to improve:
-          - Remove punctuation
+          - Remove punctuation #for future- may want to keep some punctuation like "!" or "?" as they can be strong mood signals
           - Handle simple emojis separately (":)", ":-(", "🥲", "😂")
           - Normalize repeated characters ("soooo" -> "soo")
         """
         cleaned = text.strip().lower()
         tokens = cleaned.split()
+        # Improvement#1: remove punctuation
+        tokens = [token.strip('.,!?;:"()') for token in tokens]
+        #Improvement#2: handle simple emojis separately
+        emoji_mapping = {
+            "💀": "dead",
+            "😂": "laugh",
+            "🥲": "tears_of_joy",
+            "🙂": "slightly_smiling"
+        }
+        tokens = [emoji_mapping.get(token, token) for token in tokens]
+        # Improvement#3: normalize repeated characters
+        def normalize_repeated_characters(token: str) -> str:
+            new_token = []
+            prev_char = None
+            for char in token:
+                #instead of just removing all repeated characters, we can keep up to 2 occurrences to preserve some emphasis (e.g. "soooo" -> "soo")
+                if char == prev_char and len(new_token) >= 2 and new_token[-1] == char:
+                    continue
+                if char != prev_char :
+                    new_token.append(char)
+                    prev_char = char
+            return ''.join(new_token)
+        tokens = [normalize_repeated_characters(token) for token in tokens]
+        
+        # print(f"Preprocessed '{text}' to tokens: {tokens}")
 
         return tokens
 
