@@ -57,16 +57,22 @@ Examples:
 
 **Strengths of this approach:**  
 Where does it behave predictably or reasonably well?
+- Recognizing clear positive and negative sentences
+- Recognizing emojis meaning
+- dealing with negations like "not happy:
+
 
 **Weaknesses of this approach:**  
 Where does it fail?  
 Examples: sarcasm, subtlety, mixed moods, unfamiliar slang.
+- sarcasm, slang, and mixed moods
 
 ## 4. How the ML Model Works (if used)
 
 **Features used:**  
 Describe the representation.  
 Example: “Bag of words using CountVectorizer.”
+
 
 **Training data:**  
 State that the model trained on `SAMPLE_POSTS` and `TRUE_LABELS`.
