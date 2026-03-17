@@ -8,22 +8,30 @@ from mood_analyzer import MoodAnalyzer
 
 analyzer = MoodAnalyzer()
 
-print("=== Preprocess check on SAMPLE_POSTS ===\n")
-for post in SAMPLE_POSTS:
-    tokens = analyzer.preprocess(post)
-    print(f"Input:  {post}")
-    print(f"Output: {tokens}")
-    print()
+# print("=== Preprocess check on SAMPLE_POSTS ===\n")
+# for post in SAMPLE_POSTS:
+#     tokens = analyzer.preprocess(post)
+#     print(f"Input:  {post}")
+#     print(f"Output: {tokens}")
+#     print()
 
-# Targeted punctuation edge cases
-print("=== Edge case checks ===\n")
-edge_cases = [
-    "Hello!",
-    "It's fine.",
-    "Why? Because!",
-    "bruh 💀",
-]
-for text in edge_cases:
-    print(f"Input:  {text}")
-    print(f"Output: {analyzer.preprocess(text)}")
+# # Targeted punctuation edge cases
+# print("=== Edge case checks ===\n")
+# edge_cases = [
+#     "Hello!",
+#     "It's fine.",
+#     "Why? Because!",
+#     "bruh 💀",
+# ]
+# for text in edge_cases:
+#     print(f"Input:  {text}")
+#     print(f"Output: {analyzer.preprocess(text)}")
+#     print()
+
+
+print("=== score_text check on SAMPLE_POSTS ===\n")
+for post in SAMPLE_POSTS:
+    score = analyzer.score_text(post)
+    print(f"Input:  {post}")
+    print(f"Output: {score}")
     print()

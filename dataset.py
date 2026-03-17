@@ -23,6 +23,10 @@ POSITIVE_WORDS = [
     "chill",
     "relaxed",
     "amazing",
+    "hope",
+    "laugh",
+    "joy",
+    "smile"
 ]
 
 NEGATIVE_WORDS = [
@@ -36,6 +40,8 @@ NEGATIVE_WORDS = [
     "stressed",
     "hate",
     "boring",
+    "worry",
+    "dead"
 ]
 
 # ---------------------------------------------------------------------
@@ -49,7 +55,7 @@ SAMPLE_POSTS = [
     "Feeling tired but kind of hopeful", # mixed
     "This is fine", # neutral
     "So excited for the weekend", # positive
-    "I am not happy about this", # negative
+    "I am not really happy about this", # negative
     #personally added 10 new posts
     "thats so funny lol", #positive
     "It's actually a good thing I ran into traffic because I got to listen to more of my podcast", #postive
@@ -58,7 +64,7 @@ SAMPLE_POSTS = [
     "i'm ok with it", #neutral
     "don't worry about it lol", #neutral
     "right now im not sure but I'll let you know later", #neutral
-    "hmmmm 🙂", #mixed
+    "hmmmm 🙂", #positive
     "hey i'd be happy to drive over to see you but i have to work late tonight", #mixed
     "i'm not sure how my future will look like but I hope I'll figure it out later" #mixed
 
@@ -87,7 +93,7 @@ TRUE_LABELS = [
     "mixed",     # "hey i'd be happy to drive over to see you but i have to work late tonight"
     "mixed",     # "i'm not sure how my future will look like but I hope I'll figure it out later"
     "negative",  # "bruh 💀"
-    "mixed",     # "hmmmm 🙂"
+    "positive",  # "hmmmm 🙂"
     "neutral",   # "don't worry about it lol"
 
 ]
