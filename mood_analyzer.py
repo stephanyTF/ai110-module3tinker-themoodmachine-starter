@@ -108,7 +108,26 @@ class MoodAnalyzer:
         #
         # Hint: if you implement negation, you may want to look at pairs of tokens,
         # like ("not", "happy") or ("never", "fun").
-        pass
+        #Handle simple negation such as "not happy" or "not bad"
+        tokens = self.preprocess(text)
+        score = 0
+        negation_words = {"not", "never", "no"}
+        negation_window = 0
+        for token in tokens:
+            if token in negation_words:
+                negation_window = 2  # stay active for the next 2 words
+                continue
+
+            if token in self.positive_words:
+                score += -1 if negation_window > 0 else 1
+            elif token in self.negative_words:
+                score += 1 if negation_window > 0 else -1
+
+            # Count down the window each word so "not really happy" still flips "happy".
+            if negation_window > 0:
+                negation_window -= 1
+
+        return score
 
     # ---------------------------------------------------------------------
     # Label prediction
