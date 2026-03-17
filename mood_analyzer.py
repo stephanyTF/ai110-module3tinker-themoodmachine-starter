@@ -67,14 +67,14 @@ class MoodAnalyzer:
         # Improvement#3: normalize repeated characters
         def normalize_repeated_characters(token: str) -> str:
             new_token = []
-            prev_char = None
             for char in token:
-                #instead of just removing all repeated characters, we can keep up to 2 occurrences to preserve some emphasis (e.g. "soooo" -> "soo")
-                if char == prev_char and len(new_token) >= 2 and new_token[-1] == char:
+                # Keep up to 2 *consecutive* same characters.
+                # This collapses elongation ("soooo" -> "soo", "greeeaaat" -> "greeaat")
+                # while preserving natural double letters ("happy" stays "happy",
+                # and non-consecutive repeats like "banana" are untouched).
+                if len(new_token) >= 2 and new_token[-1] == char and new_token[-2] == char:
                     continue
-                if char != prev_char :
-                    new_token.append(char)
-                    prev_char = char
+                new_token.append(char)
             return ''.join(new_token)
         tokens = [normalize_repeated_characters(token) for token in tokens]
         
