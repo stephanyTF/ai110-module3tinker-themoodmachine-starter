@@ -7,7 +7,7 @@ This lab gives you hands on experience with how basic systems work, where they b
 ---
 
 ## TF Weekly Task 5  Submission 
-At the core of the Mood machine, students should understand the strengths and weaknesses of using rule based models to make sentiment predictions on text. Students may struggle when it comes to creating rules that don’t conflict but accurately predicts emotionally nuanced, context heavy, and sarcastic texts. AI was helpful in helping quickly generate code and brainstorming how to make emotion labeling. One way I would guide students is to ensure they think of a variety of test cases to explore the limitations of rule based predictions and consider what other approaches may exist. Encouraging them to think together of different test cases will help them understand the complexity when it comes to sentiment prediction but also ensure they think deeper about coming with robust approaches.
+At the core of the Mood machine, students should understand the strengths and weaknesses of using rule based models to make sentiment predictions on text. Students may struggle when it comes to creating rules that doesn't conflict with each other but accurately predicts emotionally nuanced, context heavy, and sarcastic texts. AI was helpful in helping quickly generate code and brainstorming how to create emotion labels on posts. One way I would guide students is to ensure they think of a variety of test cases to explore the limitations of rule based predictions and consider what other approaches may exist. Encouraging them to think together to come up with different test cases will help them understand the complexity when it comes to sentiment prediction but also ensure they think deeper about coming with robust approaches.
 
 ## Repo Structure
 
